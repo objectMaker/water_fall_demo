@@ -1,7 +1,9 @@
 <template>
-    <div>
-      我是等高瀑布流
+  <div class="x_image_container">
+    <div class="image_container" v-for="(item,index) in imageList" :key="index">
+      <img :src="item.imageUrl">
     </div>
+  </div>
 </template>
 
 <script>
@@ -11,7 +13,8 @@ export default {
     data(){
         return {
           start:0,
-          count:20,
+          count:15,
+          imageList:[],
         }
     },
   methods:{
@@ -21,6 +24,7 @@ export default {
           start:this.start,
         })
         console.log(res,'获取到数据了')
+      this.imageList =  [...this.imageList,...res];
       }
   },
   mounted() {
