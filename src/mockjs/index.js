@@ -8,8 +8,11 @@ Mock.mock(/\/api\/images/,function (params){
         '125x125', '728x90', '160x600', '120x600',
         '300x600'
     ]
+    const  count = +params.url.split('?')[1].split('&').find(item=>{
+        return item.indexOf('count') !== -1
+    }).split('=')[1]
     let imageArr = [];
-    for (let i=0;i<20;i++){
+    for (let i=0;i<count;i++){
         let info = sizeArr[Math.floor(Math.random()*sizeArr.length)]
         let imageUrl = Mock.Random.image(info)
         let width = info.split('x')[0]
