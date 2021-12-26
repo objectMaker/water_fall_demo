@@ -1,6 +1,6 @@
 <template>
-    <div :style="{height:'100%'}">
-      <router-view :style="{height: '100%'}"></router-view>
+    <div :style="{height:'100%',width:'100%'}">
+      <router-view></router-view>
     </div>
 </template>
 
